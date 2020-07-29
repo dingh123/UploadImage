@@ -18,6 +18,15 @@ export default {
 <upload-image ref="uploadImage" v-model="formData.image" :limit="6" :multiple="true" description="建议上传600x600的图片，只能上传jpg/png/gif文件" />
 ```
 
+如果动态设置回显，需要手动触发一下watchValue方法
+```javascript
+this.formData.image = res.image;
+
+this.$nextTick(() => {
+    this.$refs.uploadImage.watchValue();
+});
+```
+
 ### 属性说明
 
 |属性名        |类型 |默认值  |说明                                           |

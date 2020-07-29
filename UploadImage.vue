@@ -135,7 +135,7 @@ export default {
         },
         uploadImgRequest(f) {
             let param = new FormData(); //创建form对象
-            param.append('file', f.file); //通过append向form对象添加数据
+            param.append(this.name, f.file); //通过append向form对象添加数据
             uploadImg(param)
                 .then(res => {
                     f.onSuccess(res);
